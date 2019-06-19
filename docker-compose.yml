@@ -1,0 +1,7 @@
+core:
+  build: .
+  ports:
+    - "8111:80"
+  volumes:
+    - src:/var/www/html:cached
+  container_name: web_container
