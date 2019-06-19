@@ -3,5 +3,5 @@ core:
   ports:
     - "8111:80"
   volumes:
-    - src:/var/www/html:cached
+    - server:/var/www/html:cached
   container_name: web_container
