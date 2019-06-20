@@ -1,7 +1,28 @@
-core:
-  build: .
-  ports:
-    - "8111:80"
-  volumes:
-    - server:/var/www/html:cached
-  container_name: web_container
+version: "3"
+services:
+    mysql:
+      image: mysql:5.6
+      ports:
+        - "3340:3306"
+      environment:
+        MYSQL_ROOT_PASSWORD: ""
+        MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+        MYSQL_DATABASE: 'hh'
+        MYSQL_USER: 'gohh'
+        MYSQL_PASSWORD: 'gohh'
+      container_name: mysql
+      networks:
+            - webnet
+    chat:
+      build: .
+      ports:
+        - "8088:80"
+      volumes:
+        - ./server:/var/www/html:cached
+      links:
+        - mysql:mysql
+      container_name: chat
+      networks:
+            - webnet
+networks:
+  webnet:
