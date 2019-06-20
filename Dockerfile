@@ -1,6 +1,6 @@
 FROM ubuntu:latest
 
-MAINTAINER Chinh PL <chinhpl@wealth-park.com>
+MAINTAINER 南川 ファム <fam.minamikawa@gmail.com>
 
 ENV DEBIAN_FRONTEND noninteractive
 
@@ -8,8 +8,11 @@ ENV DEBIAN_FRONTEND noninteractive
 ENV PYTHONIOENCODING=UTF-8
 
 
-RUN apt-get update && apt-get install -y supervisor
-
+RUN apt-get update && apt-get install -y supervisor && apt-get -y upgrade -y && \
+    apt-get install curl -y  && \
+    apt-get install -y git && \
+    apt-get install -y golang && \
+    apt-get install vim -y 
 
 ADD ./supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
