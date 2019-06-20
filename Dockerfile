@@ -1,4 +1,4 @@
-FROM centos:latest
+FROM ubuntu:latest
 
 MAINTAINER Chinh PL <chinhpl@wealth-park.com>
 
@@ -7,8 +7,8 @@ ENV DEBIAN_FRONTEND noninteractive
 
 ENV PYTHONIOENCODING=UTF-8
 
-# Update software list, install php-nginx & clear cache
-RUN apt-get -y update && apt-get install -y supervisor
+
+RUN apt-get update && apt-get install -y supervisor
 
 
 ADD ./supervisord.conf /etc/supervisor/conf.d/supervisord.conf
