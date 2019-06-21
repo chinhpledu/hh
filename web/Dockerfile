@@ -10,6 +10,11 @@ ENV PYTHONIOENCODING=UTF-8
 
 RUN apt-get update && \
     apt-get install iputils-ping -y && \
+    apt-get install curl -y  && \
+    apt-get install build-essential libpq-dev libssl-dev openssl libffi-dev zlib1g-dev -y && \
+    apt-get install python3-pip python3.7-dev -y && \
+    apt-get install python3.7 -y && \
+    apt-get install -y git && \
     apt-get install -y supervisor && \
     apt-get install vim -y
 
