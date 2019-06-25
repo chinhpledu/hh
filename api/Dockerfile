@@ -8,9 +8,11 @@ ENV DEBIAN_FRONTEND noninteractive
 ENV PYTHONIOENCODING=UTF-8
 
 
-RUN apt-get update && \
+RUN apt-get update && apt-get install -y supervisor && apt-get -y upgrade -y && \
     apt-get install iputils-ping -y && \
-    apt-get install -y supervisor && \
+    apt-get install curl -y  && \
+    apt-get install -y git && \
+    apt-get install -y golang && \
     apt-get install vim -y
 
 ADD ./api/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
