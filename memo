@@ -1,0 +1,5 @@
+docker kill api socket web db && docker rm api socket web db
+100万回のWebSocket接続とGo : https://postd.cc/100%E4%B8%87%E5%9B%9E%E3%81%AEwebsocket%E6%8E%A5%E7%B6%9A%E3%81%A8go/
+hướng dẫn 1 cách dễ hiểu nhất 👉 WebSocket go tutorial : https://tutorialedge.net/golang/go-websocket-tutorial/
+https://tutorialedge.net/projects/chat-system-in-go-and-react/
+https://gowebexamples.com/websockets/

@@ -1,1 +1,0 @@
-docker kill api socket web db && docker rm api socket web db
