@@ -3,3 +3,10 @@ docker kill api socket web db && docker rm api socket web db
 hướng dẫn 1 cách dễ hiểu nhất 👉 WebSocket go tutorial : https://tutorialedge.net/golang/go-websocket-tutorial/
 https://tutorialedge.net/projects/chat-system-in-go-and-react/
 https://gowebexamples.com/websockets/
+
+go auth : https://www.sohamkamani.com/blog/2018/03/25/golang-session-authentication/
+
+
+Rebuild container-no cache :
+
+docker kill {container_name} && docker rm {container_name} && docker rmi $(docker images | grep _{container_name} | awk '{print $3}') && docker-compose up -d
